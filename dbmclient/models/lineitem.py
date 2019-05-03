@@ -265,7 +265,7 @@ class Lineitem(Base):
             req = service.lineitems().uploadlineitems(body=body)
             resp = req.execute()
 
-            print resp
+            print (resp)
 
         except client.AccessTokenRefreshError:
             print ("The credentials have been revoked or expired, please re-run"
