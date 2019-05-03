@@ -1,7 +1,7 @@
 import json
 import re
 import collections
-from StringIO import StringIO
+from io import StringIO
 
 from apiclient import discovery
 from apiclient import http
