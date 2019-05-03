@@ -140,7 +140,7 @@ class Lineitem(Base):
                 rval["msg_type"] = "error"
                 rval["msg"] = "No line item object was returned from the DSP"
 
-        except Exception, e:
+        except Exception as e:
             rval = {}
             rval["msg_type"] = "error"
             rval["msg"] = "A fatal error has occurred. Please contact your administrator."
