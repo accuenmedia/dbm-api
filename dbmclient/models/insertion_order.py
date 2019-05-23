@@ -27,7 +27,8 @@ class InsertionOrder(Base):
             first = True
             io_rval = []
             ids = []
-            for raw_io in csv.reader(ios.encode('utf-8').split('\n')):
+            #for raw_io in csv.reader(ios.encode('utf-8').split('\n')):
+            for raw_io in csv.reader(ios.split('\n')):
                 if len(raw_io) == 0:
                     continue
 
@@ -114,7 +115,8 @@ class InsertionOrder(Base):
         first = True
         rval = []
         ids = []
-        for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+        #for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+        for raw_lineitem in csv.reader(lineitems.split('\n')):
             if len(raw_lineitem) == 0:
                 continue
 

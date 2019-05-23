@@ -19,6 +19,7 @@ class Base(dict):
         return discovery.build('doubleclickbidmanager', _API_VERSION, http=auth)
 
     def encode_for_id(self, id):
+        """
         # TERRIBLE!!!!! BUT GOOGLE DOESNT SEND US AN ID.
         # remove '=' because it messes up urls. we never decode so its not a big deal.
         try:
@@ -27,8 +28,11 @@ class Base(dict):
             # can't encode
             pass
         return base64.b64encode(id).strip('=')
+        """
+        return id
 
     def decode_id(self, id):
+        """
         # TERRIBLE!!!!! BUT GOOGLE DOESNT SEND US AN ID.
         # add '=' because we remove it when encoding to not mess up urls.
         
@@ -36,6 +40,8 @@ class Base(dict):
         if missing_padding:
             id += b'='* missing_padding
         return base64.b64decode(id.decode('utf-8'))
+        """
+        return id
 
     def get_object(self, data):
         new_obj = self.__class__(Base.connection)

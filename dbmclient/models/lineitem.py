@@ -120,7 +120,8 @@ class Lineitem(Base):
             lineitems = response['lineItems']
             first = True
             lineitem_rval = []
-            for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+            #for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+            for raw_lineitem in csv.reader(lineitems.split('\n')):
                 if len(raw_lineitem) == 0:
                     continue
 
@@ -173,7 +174,8 @@ class Lineitem(Base):
         lineitems = resp['lineItems']
         first = True
         rval = []
-        for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+        #for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+        for raw_lineitem in csv.reader(lineitems.split('\n')):
             if len(raw_lineitem) == 0:
                 continue
 
