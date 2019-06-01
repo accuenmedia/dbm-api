@@ -24,7 +24,7 @@ class Advertiser(Base):
                    "the application to re-authorize")
 
         if 'lineItems' not in resp:
-            print "NO DATA"
+            print ("NO DATA")
             return None
         
         lineitems = resp['lineItems']

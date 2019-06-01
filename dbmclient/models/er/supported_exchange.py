@@ -1,7 +1,7 @@
 import json
 import re
 import collections
-from StringIO import StringIO
+from io import StringIO
 
 from apiclient import discovery
 from apiclient import http
@@ -29,7 +29,7 @@ class SupportedExchange:
         count = 0
         while req is not None:
             if count == max_pages:
-                print "more than max pages"
+                print ("more than max pages")
                 break
             count += 1
             resp = req.execute()

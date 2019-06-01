@@ -120,7 +120,8 @@ class Lineitem(Base):
             lineitems = response['lineItems']
             first = True
             lineitem_rval = []
-            for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+            #for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+            for raw_lineitem in csv.reader(lineitems.split('\n')):
                 if len(raw_lineitem) == 0:
                     continue
 
@@ -140,7 +141,7 @@ class Lineitem(Base):
                 rval["msg_type"] = "error"
                 rval["msg"] = "No line item object was returned from the DSP"
 
-        except Exception, e:
+        except Exception as e:
             rval = {}
             rval["msg_type"] = "error"
             rval["msg"] = "A fatal error has occurred. Please contact your administrator."
@@ -173,7 +174,8 @@ class Lineitem(Base):
         lineitems = resp['lineItems']
         first = True
         rval = []
-        for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+        #for raw_lineitem in csv.reader(lineitems.encode('utf-8').split('\n')):
+        for raw_lineitem in csv.reader(lineitems.split('\n')):
             if len(raw_lineitem) == 0:
                 continue
 
@@ -265,7 +267,7 @@ class Lineitem(Base):
             req = service.lineitems().uploadlineitems(body=body)
             resp = req.execute()
 
-            print resp
+            print (resp)
 
         except client.AccessTokenRefreshError:
             print ("The credentials have been revoked or expired, please re-run"
