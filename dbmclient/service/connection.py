@@ -23,7 +23,7 @@ class Connection:
             else:
                 key_file = os.environ['P12FILEDBM']
 
-            with open(self.key_file) as f:
+            with open(self.key_file, 'rb') as f:
                 Connection.password = f.read()
         except:
             raise DBMP12FileDoesNotExist
