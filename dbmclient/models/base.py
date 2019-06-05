@@ -49,5 +49,5 @@ class Base(dict):
         return new_obj
 
     def import_props(self, props):
-        for key, value in props.iteritems():
+        for key, value in props.items():
             self[key] = value
