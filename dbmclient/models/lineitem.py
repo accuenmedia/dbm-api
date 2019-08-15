@@ -134,9 +134,10 @@ class Lineitem(Base):
 
             rval = {}
             rval["data"] = lineitem_rval
+            rval["request_body"] = request_body
             if len(lineitem_rval) > 0:
                 rval["msg_type"] = "success"
-                rval["msg"] = ""
+                rval["msg"] = "Success"
             else:
                 rval["msg_type"] = "error"
                 rval["msg"] = "No line item object was returned from the DSP"
