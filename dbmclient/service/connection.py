@@ -21,7 +21,7 @@ class Connection:
             if p12:
                 self.key_file = p12
             else:
-                key_file = os.environ['P12FILEDBM']
+                self.key_file = os.environ['P12FILEDBM']
 
             with open(self.key_file, 'rb') as f:
                 Connection.password = f.read()

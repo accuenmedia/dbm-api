@@ -3,8 +3,8 @@ import re
 import collections
 from io import StringIO
 
-from apiclient import discovery
-from apiclient import http
+from googleapiclient import discovery
+from googleapiclient import http
 
 class SupportedExchange:
 

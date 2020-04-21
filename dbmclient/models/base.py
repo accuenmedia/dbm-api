@@ -2,7 +2,7 @@ import base64
 import json
 import requests
 
-from apiclient import discovery
+from googleapiclient import discovery
 
 _API_VERSION = 'v1'
 
