@@ -1,0 +1,5 @@
+
+steps:
+  - label: "build"
+    command: ./build.sh test
+    branches: "master"
